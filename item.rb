@@ -23,12 +23,8 @@ class Item
   def can_be_archive?
     current_year = DateTime.now.year
     publish_year = @publish_date.year
-    if publish_year <= current_year - 10
-      @archived = true
-    else
-      @archived = false
-    end
-    return @archived
+    @archived = publish_year <= current_year - 10
+    @archived
   end
 end
 
