@@ -1,20 +1,20 @@
 class Main
   def director(user_answer)
-  case user_answer
-  when 1
-    # all_books
-  when 2
-    # all_people
-  when 3
-    # make_person
-  when 4
-    # create_book
-  when 5
-    # create_rental
-  when 6
-    # user_rentals
+    case user_answer
+    when 1
+      # all_books
+    when 2
+      # all_people
+    when 3
+      # make_person
+    when 4
+      # create_book
+    when 5
+      # create_rental
+    when 6
+      # user_rentals
+    end
   end
-end
 
   def show_list
     puts 'Welcome to School Library App!'
