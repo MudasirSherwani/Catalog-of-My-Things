@@ -1,6 +1,3 @@
-gem 'lolize'
-require 'lolize/auto'
-
 class Main
   def director(user_answer)
   case user_answer
