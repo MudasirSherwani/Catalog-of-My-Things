@@ -1,3 +1,5 @@
+require_relative 'item'
+
 class MusicAlbum < Item
   attr_accessor :artist, :on_spotify, :genre
   
