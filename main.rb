@@ -17,7 +17,7 @@ class Main
   end
 
   def show_list
-    puts 'Welcome to School Library App!'
+    puts 'Welcome to Catalog of My Things App!'
     loop do
       puts '1 List all books'
       puts '2 List all music albums'
