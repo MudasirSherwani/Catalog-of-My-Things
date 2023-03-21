@@ -24,10 +24,9 @@ OPTIONAL SECTIONS:
 
 After you're finished please remove all the comments and instructions!
 -->
+# 📖 Catalog of My Things
 
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-
 
 </div>
 
@@ -54,9 +53,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Catalog of my things] <a name="about-project"></a>
+## 📖 Catalog of My Things <a name="about-project"></a>
 
-This is a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files but there is also a database with tables structure analogical to the program's class structure.
+> This is a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files but there is also a database with tables structure analogical to the program's class structure.
 
 <img src = "./Capture.png">
 
