@@ -1,20 +1,16 @@
+require './app'
 class Main
-  def director(user_answer)
-    case user_answer
-    when 1
-      # all_books
-    when 2
-      # all_people
-    when 3
-      # make_person
-    when 4
-      # create_book
-    when 5
-      # create_rental
-    when 6
-      # user_rentals
+  
+
+  def nainfuc
+    puts 'Welcome To your catolog of things!'
+    app = App.new
+    loop 
+      show_list
+      director(app)
     end
   end
+        
 
   def show_list
     puts 'Welcome to School Library App!'
@@ -36,10 +32,45 @@ class Main
         puts 'thank you for using this app'
         break
       end
-      director(user_answer)
+      director(app)
     end
   end
-end
+
+  def director(app)
+    user_answer = gets.chomp.to_i
+    case user_answer
+    when 1
+      app.list_all_books
+    when 2
+      # all_people
+    when 3
+      # make_person
+    when 4
+      # create_book
+    when 5
+      # create_rental
+    when 6
+      # '6 List all authors'
+    else
+      director_add_items(user_answer)
+    end
+  end
+
+  def director_add_items(user_answer)
+    case user_answer
+    when 7
+      # '7 Add a book'
+    when 8
+      # '8 Add a music album'
+    when 9
+      # '9 Add a game'
+    when 10
+      puts 'Thank you for using this app'
+      exit
+    else
+      puts 'Invalid Input Try Again !'
+    end
+  end
 
 main = Main.new
-main.show_list
+main.nainfuc
