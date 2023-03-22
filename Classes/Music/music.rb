@@ -10,7 +10,6 @@ class Music
     @genre_json = []
     @music_json = []
     @music_file = 'Classes/Music/music_data.json'
-    load_json
   end
 
   def add_musicalbum
@@ -63,5 +62,5 @@ class Music
       puts "Genre_Id: #{item["Genre_Id"]} Genre_Name: #{item["Genre_Name"]}"
     end
   end
-  
+
 end
