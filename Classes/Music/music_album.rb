@@ -1,16 +1,15 @@
-require_relative 'item'
+require_relative '../item'
 
 class MusicAlbum < Item
-  attr_accessor :artist, :on_spotify, :genre
-  
-  def initialize(name, release_date, genre, artist, on_spotify)
-    super(archived, release_date)
-    @name = name
-    @artist = artist
+  attr_accessor :publish_date, :archive, :on_spotify, :music_id
+
+  def initialize(release_date, archived, on_spotify)
+    super(release_date)
+    @music_id = Random.rand(1..1000)
     @on_spotify = on_spotify
-    @genre = genre
+    @archived = archived
   end
-  
+
   def can_be_archived?
     if @archived && @on_spotify
       true
@@ -18,9 +17,4 @@ class MusicAlbum < Item
       false
     end
   end
-  
-  def self.list_music_albums
-    puts 'listening music'
-  end
-
 end
