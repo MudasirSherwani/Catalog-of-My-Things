@@ -1,3 +1,4 @@
+require_relative './game_logic'
 class Main
   def director(user_answer)
     case user_answer
@@ -25,7 +26,8 @@ class Main
     when 8
       # '8 Add a music album'
     when 9
-      # '9 Add a game'
+      puts 'Follow the prompts to add a game'
+      add_game
     when 10
       puts 'Thank you for using this app'
       exit
