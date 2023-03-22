@@ -36,3 +36,7 @@ class Item
     @archived
   end
 end
+
+
+# item1 = Item.new('2009-06-01') item1.can_be_archived? item1.move_to_archive
+# item2 = Item.new('2016-06-01') item2.can_be_archived? item2.move_to_archive
