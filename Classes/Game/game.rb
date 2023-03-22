@@ -1,4 +1,5 @@
-require_relative './item'
+require_relative '../Game/game'
+require_relative '../item'
 require 'date'
 
 class Game < Item
@@ -10,7 +11,7 @@ class Game < Item
     super(publish_date) # calls the parent constructor without passing publish_date parameter
   end
 
-  def can_be_archive?
+  def can_be_archived?
     DateTime.now.year - Date.parse(@last_played_at).year > 2 && super()
   end
 end

@@ -1,5 +1,10 @@
 require_relative './game_logic'
 class Main
+  def initialize()
+    @all_games = []
+    @all_authors = []
+  end
+
   def director(user_answer)
     case user_answer
     when 1
@@ -7,7 +12,7 @@ class Main
     when 2
       # '2 List all music albums'
     when 3
-      # '3 List of games'
+      # all_games(@all_games)
     when 4
       # '4 List all genres'
     when 5
@@ -27,9 +32,11 @@ class Main
       # '8 Add a music album'
     when 9
       puts 'Follow the prompts to add a game'
-      add_game
+      add_game(@all_games, @all_authors)
     when 10
       puts 'Thank you for using this app'
+      puts @all_authors
+      puts @all_games
       exit
     else
       puts 'Invalid Input Try Again !'

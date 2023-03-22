@@ -1,8 +1,8 @@
-require_relative './game'
-require_relative './author'
-require_relative './item'
+require_relative './Classes/Game/game'
+require_relative './Classes/Game/author'
+require_relative './Classes/item'
 
-def add_game
+def add_game(games_arr, authors_arr)
   puts 'Enter game title :'
   game_label = gets.chomp
 
@@ -24,21 +24,50 @@ def add_game
   puts 'Enter the date you last Played [yy-mm-dd] :'
   last_played_res = gets.chomp
 
-  item(author_fname_res, author_lname_res, published_date_res, game_genre, game_label)
+  author = Author.new(author_fname_res, author_lname_res)
+  # authors_arr.push(author)
+  authors_arr << author
 
-  Game.new(published_date_res, multiplayer_res, last_played_res)
+  item(published_date_res, game_genre, game_label, author)
+
+  new_game = Game.new(published_date_res, multiplayer_res, last_played_res)
+  game = {
+    'id' => new_game.id,
+    'title' => game_label,
+    'genre' => game_genre,
+    'multi-player' => new_game.multiplayer,
+    'published_date' => new_game.publish_date,
+    'last_played' => new_game.last_played_at
+  }
+
+  games_arr << game
 
   puts 'game successfully added!!'
 end
 
-def item(first_name, last_name, published_date, game_genre, game_label)
-  author = Author.new(first_name, last_name)
-
+def item(published_date, game_genre, game_label, author_obj)
   new_item = Item.new(published_date)
   new_item.label = game_label
 
   new_item.genre = game_genre
-  puts new_item.label
 
-  author.add_item(new_item)
+  author_obj.add_item(new_item)
+end
+
+def all_games(all_games_arr)
+  if all_games_arr.empty?
+    puts 'No games available, sorry. Add a game!'
+  else
+    puts 'ID   | Genre | Title      | Multiplayer | Published Date | Last Played'
+    puts '---- | ----- | -----------| ----------- | -------------- | -----------'
+    all_games_arr.each.with_index(1) do |game, _index|
+      id = game['id'].to_s.rjust(4)
+      genre = game['genre'].ljust(6)
+      title = game['title'].ljust(32)
+      multiplayer = game['multi-player'].ljust(11)
+      published_date = game['published_date'].ljust(15)
+      last_played = game['last_played'].ljust(12)
+      puts "#{id} | #{genre} | #{title} | #{multiplayer} | #{published_date} | #{last_played}"
+    end
+  end
 end
