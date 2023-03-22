@@ -35,5 +35,17 @@ class Music
     @genre_json << genre
     genre
   end
+
+  def save_json
+    music_list_arr = []
+    @music_json.each do |music|
+      music_list_arr.push({ Genre_Id: music.genre.id, Genre_Name: music.genre.gen_name,
+                            Release_date: music.publish_date, Archived: music.archived,
+                            Spotify: music.on_spotify, music_id: music.music_id })
+    end
+    File.exist?(@music_file)
+    File.write(@music_file, JSON.pretty_generate(music_list_arr))
+  end
+
   
 end
