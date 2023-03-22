@@ -47,5 +47,15 @@ class Music
     File.write(@music_file, JSON.pretty_generate(music_list_arr))
   end
 
+  def load_json
+    File.exist?(@music_file)
+    JSON.parse(File.read(@music_file))
+  end
+
+  def list_music
+    load_json.each do |item|
+      puts "Music_id: #{item["music_id"]} On_Spotify: #{item["Spotify"]} Archived: #{item["Archived"]} Release_date: #{item["Release_date"]}"
+    end
+  end
   
 end
