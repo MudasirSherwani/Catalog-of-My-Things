@@ -58,4 +58,10 @@ class Music
     end
   end
   
+  def list_genre
+    load_json.each do |item|
+      puts "Genre_Id: #{item["Genre_Id"]} Genre_Name: #{item["Genre_Name"]}"
+    end
+  end
+  
 end
