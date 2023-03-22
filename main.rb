@@ -1,5 +1,6 @@
 require_relative './game_logic'
 require_relative './path_finder'
+require_relative './load_game_data'
 
 class Main
   def initialize()
@@ -50,6 +51,7 @@ class Main
   def show_list
     puts ''
     puts 'Welcome to Catalog of My Things App!'
+    load_game_data(@all_games, @all_authors)
     loop do
       puts '1 List all books'
       puts '2 List all music albums'
