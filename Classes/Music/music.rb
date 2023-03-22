@@ -1,5 +1,5 @@
 require 'json'
-
+require 'pry'
 require_relative 'genre'
 require_relative 'music_album'
 
@@ -7,9 +7,9 @@ class Music
   attr_accessor :list_genres, :list_albums
 
   def initialize
-    @genre_json = []
-    @music_json = []
     @music_file = 'Classes/Music/music_data.json'
+    @genre_json = []
+    @music_json = load_json
   end
 
   def add_musicalbum
@@ -23,7 +23,9 @@ class Music
     genre_recieved = add_genre
     genre_recieved.add_item(music_album)
     puts 'Music Album created succesfully'
-    @music_json << music_album
+    @music_json << { Genre_Id: music_album.genre.id, Genre_Name: music_album.genre.gen_name,
+      Release_date: music_album.publish_date, Archived: music_album.archived,
+      Spotify: music_album.on_spotify, music_id: music_album.music_id }
     save_json
   end
 
@@ -36,14 +38,9 @@ class Music
   end
 
   def save_json
-    music_list_arr = []
-    @music_json.each do |music|
-      music_list_arr.push({ Genre_Id: music.genre.id, Genre_Name: music.genre.gen_name,
-                            Release_date: music.publish_date, Archived: music.archived,
-                            Spotify: music.on_spotify, music_id: music.music_id })
+    File.open(@music_file,"w") do |f|
+      f.puts JSON.generate(@music_json)
     end
-    File.exist?(@music_file)
-    File.write(@music_file, JSON.pretty_generate(music_list_arr))
   end
 
   def load_json
