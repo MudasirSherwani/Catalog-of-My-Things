@@ -12,13 +12,13 @@ class Main
     when 2
       # '2 List all music albums'
     when 3
-      # all_games(@all_games)
+      all_games(@all_games)
     when 4
       # '4 List all genres'
     when 5
       # '5 List all labels'
     when 6
-      # '6 List all authors'
+      all_authors(@all_authors)
     else
       director_add_items(user_answer)
     end
@@ -36,6 +36,7 @@ class Main
     when 10
       puts 'Thank you for using this app'
       puts @all_authors
+      puts ''
       puts @all_games
       exit
     else
@@ -44,6 +45,7 @@ class Main
   end
 
   def show_list
+    puts ''
     puts 'Welcome to Catalog of My Things App!'
     loop do
       puts '1 List all books'
