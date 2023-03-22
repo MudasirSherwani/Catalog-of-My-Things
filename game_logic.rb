@@ -27,7 +27,7 @@ def add_game(games_arr, authors_arr)
 
   author = Author.new(author_fname_res, author_lname_res)
   new_author = {
-    'fname' => author.first_name,
+    'first_name' => author.first_name,
     'last_name' => author.last_name
   }
   authors_arr << new_author
@@ -79,7 +79,7 @@ def all_authors(all_authors_arr)
     puts 'No Authors available, sorry. Add a game!'
   else
     all_authors_arr.each.with_index(1) do |author, index|
-      puts "#{index}) #{author['fname']} #{author['last_name']}"
+      puts "#{index}) #{author['firstname']} #{author['last_name']}"
     end
   end
   puts ' '

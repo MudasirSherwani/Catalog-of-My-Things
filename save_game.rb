@@ -1,6 +1,5 @@
-
-def save_data(file_name, curr_data)
-
+require 'json'
+def auto_save(file_name, curr_data)
   # Check if the file exists
   if File.exist?(file_name)
     # Read the existing JSON data from the file and parse it into a Ruby array
@@ -10,7 +9,6 @@ def save_data(file_name, curr_data)
   else
     # If the file does not exist, create an empty array
     saved_data = []
-    # prev_len = 0
   end
 
   # Append the new data to the array if it's not already present

@@ -1,4 +1,6 @@
 require_relative './game_logic'
+require_relative './path_finder'
+
 class Main
   def initialize()
     @all_games = []
@@ -35,6 +37,7 @@ class Main
       add_game(@all_games, @all_authors)
     when 10
       puts 'Thank you for using this app'
+      path_finder(@all_games, @all_authors)
       puts @all_authors
       puts ''
       puts @all_games
