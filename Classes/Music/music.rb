@@ -24,8 +24,8 @@ class Music
     genre_recieved.add_item(music_album)
     puts 'Music Album created succesfully'
     @music_json << { Genre_Id: music_album.genre.id, Genre_Name: music_album.genre.gen_name,
-      Release_date: music_album.publish_date, Archived: music_album.archived,
-      Spotify: music_album.on_spotify, music_id: music_album.music_id }
+                     Release_date: music_album.publish_date, Archived: music_album.archived,
+                     Spotify: music_album.on_spotify, music_id: music_album.music_id }
     save_json
   end
 
@@ -38,7 +38,7 @@ class Music
   end
 
   def save_json
-    File.open(@music_file,"w") do |f|
+    File.open(@music_file, 'w') do |f|
       f.puts JSON.generate(@music_json)
     end
   end
@@ -50,14 +50,14 @@ class Music
 
   def list_music
     load_json.each do |item|
-      puts "Music_id: #{item["music_id"]} On_Spotify: #{item["Spotify"]} Archived: #{item["Archived"]} Release_date: #{item["Release_date"]}"
-    end
-  end
-  
-  def list_genre
-    load_json.each do |item|
-      puts "Genre_Id: #{item["Genre_Id"]} Genre_Name: #{item["Genre_Name"]}"
+      print "\nMusic_id: #{item['music_id']} On_Spotify: #{item['Spotify']} "
+      print "Archived: #{item['Archived']} Release_date: #{item['Release_date']}"
     end
   end
 
+  def list_genre
+    load_json.each do |item|
+      print "\nGenre_Id: #{item['Genre_Id']} Genre_Name: #{item['Genre_Name']}"
+    end
+  end
 end
