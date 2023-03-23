@@ -1,6 +1,7 @@
 require_relative './game_logic'
 require_relative './path_finder'
 require_relative './load_game_data'
+require_relative './get_user_data'
 
 class Main
   def initialize()
