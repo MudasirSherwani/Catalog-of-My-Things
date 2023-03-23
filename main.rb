@@ -1,19 +1,59 @@
-require './app'
-class Main
-  
+# require_relative './game_logic'
+# require_relative './path_finder'
+# require_relative './load_game_data'
+require_relative './Classes/Book/booklablemodule'
 
-  def nainfuc
-    puts 'Welcome To your catolog of things!'
-    app = App.new
-    loop 
-      show_list
-      director(app)
+class Main
+  include BookLabel
+  def initialize()
+    @all_games = []
+    @all_authors = []
+  end
+
+  def director(user_answer)
+    case user_answer
+    when 1
+      list_all_books
+    when 2
+      # '2 List all music albums'
+    when 3
+      all_games(@all_games)
+    when 4
+      # '4 List all genres'
+    when 5
+      list_all_labels
+    when 6
+      all_authors(@all_authors)
+    else
+      director_add_items(user_answer)
     end
   end
-        
+
+  def director_add_items(user_answer)
+    case user_answer
+    when 7
+      add_book
+    when 8
+      # '8 Add a music album'
+    when 9
+      puts 'Follow the prompts to add a game'
+      add_game(@all_games, @all_authors)
+    when 10
+      puts 'Thank you for using this app'
+      path_finder(@all_games, @all_authors)
+      puts @all_authors
+      puts ''
+      puts @all_games
+      exit
+    else
+      puts 'Invalid Input Try Again !'
+    end
+  end
 
   def show_list
+    puts ''
     puts 'Welcome to Catalog of My Things App!'
+    # load_game_data(@all_games, @all_authors)
     loop do
       puts '1 List all books'
       puts '2 List all music albums'
@@ -27,50 +67,10 @@ class Main
       puts '10 Exit'
 
       user_answer = gets.chomp.to_i
-
-      if user_answer == 10
-        puts 'thank you for using this app'
-        break
-      end
-      director(app)
+      director(user_answer)
     end
   end
-
-  def director(app)
-    user_answer = gets.chomp.to_i
-    case user_answer
-    when 1
-      app.list_all_books
-    when 2
-      # all_people
-    when 3
-      # make_person
-    when 4
-      # create_book
-    when 5
-      # create_rental
-    when 6
-      # '6 List all authors'
-    else
-      director_add_items(user_answer)
-    end
-  end
-
-  def director_add_items(user_answer)
-    case user_answer
-    when 7
-      # '7 Add a book'
-    when 8
-      # '8 Add a music album'
-    when 9
-      # '9 Add a game'
-    when 10
-      puts 'Thank you for using this app'
-      exit
-    else
-      puts 'Invalid Input Try Again !'
-    end
-  end
+end
 
 main = Main.new
-main.nainfuc
+main.show_list

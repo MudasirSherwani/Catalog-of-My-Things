@@ -6,24 +6,24 @@ require_relative './label'
 module BookLabel
   def fetch_books
     # unless File.exist?('../../storage/books.json')
-    File.open('./storage/books.json', 'w') unless File.exist?('./storage/books.json')
-    book_data = File.read('./storage/books.json')
+    File.open('./Classes/Book/books.json', 'w') unless File.exist?('./Classes/Book/books.json')
+    book_data = File.read('./Classes/Book/books.json')
 
     if book_data.empty?
       []
     else
-      File.open('./storage/books.json', 'r') { |line| JSON.parse(line.read) }
+      File.open('./Classes/Book/books.json', 'r') { |line| JSON.parse(line.read) }
     end
   end
 
   def fetch_labels
-    File.open('./storage/labels.json', 'w') unless File.exist?('./storage/labels.json')
-    lable_data = File.read('./storage/labels.json')
+    File.open('./Classes/Book/labels.json', 'w') unless File.exist?('./Classes/Book/labels.json')
+    lable_data = File.read('./Classes/Book/labels.json')
 
     if lable_data.empty?
       []
     else
-      File.open('./storage/labels.json', 'r') { |line| JSON.parse(line.read) }
+      File.open('./Classes/Book/labels.json', 'r') { |line| JSON.parse(line.read) }
     end
   end
 
@@ -61,14 +61,14 @@ module BookLabel
   def store_book(book)
     books = fetch_books
     books << book.to_json
-    File.write('./storage/books.json', JSON.generate(books), mode: 'w')
+    File.write('./Classes/Book/books.json', JSON.generate(books), mode: 'w')
   end
 
   def store_label(label)
     labels = fetch_labels
 
     labels << label.to_json
-    File.write('./storage/labels.json', JSON.generate(labels), mode: 'w')
+    File.write('./Classes/Book/labels.json', JSON.generate(labels), mode: 'w')
   end
 
   # listings
