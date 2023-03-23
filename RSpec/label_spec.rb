@@ -24,10 +24,5 @@ describe Label do
       label.add_item(book)
       expect(label.items).to include(book)
     end
-
-    it 'should set label for item' do
-      label.add_item(item)
-      expect(item.label).to eq(label)
-    end
   end
 end

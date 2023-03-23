@@ -40,10 +40,10 @@ class Main
       add_game(@all_games, @all_authors)
     when 10
       puts 'Thank you for using this app'
-      path_finder(@all_games, @all_authors)
-      puts @all_authors
+      # path_finder(@all_games, @all_authors)
+      # puts @all_authors
       puts ''
-      puts @all_games
+      # puts @all_games
       exit
     else
       puts 'Invalid Input Try Again !'
