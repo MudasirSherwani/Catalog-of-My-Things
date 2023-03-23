@@ -59,5 +59,6 @@ class Music
     load_json.each do |item|
       print "\nGenre_Id: #{item['Genre_Id']} Genre_Name: #{item['Genre_Name']}"
     end
+    puts "\n"
   end
 end
