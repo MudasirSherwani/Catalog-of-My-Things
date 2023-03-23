@@ -38,6 +38,7 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [🚀 demo video](#demo-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -89,6 +90,10 @@ After you're finished please remove all the comments and instructions!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+## demo-video
+> group demo video for the presentation of the app
+
+[Link to demo video](https://youtu.be/qYq3NXRCJrU)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
