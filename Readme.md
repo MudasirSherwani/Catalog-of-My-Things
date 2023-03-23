@@ -93,7 +93,7 @@ After you're finished please remove all the comments and instructions!
 ## demo-video
 > group demo video for the presentation of the app
 
-[Link to demo video](https://youtu.be/qYq3NXRCJrU)
+[Link to demo video](https://www.youtube.com/watch?v=4VerAUEfMUg)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
