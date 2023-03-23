@@ -1,7 +1,8 @@
 require 'json'
 
 def load_game_data(all_games_arr, all_authors_arr)
-  files = [{ 'game_data.json' => all_games_arr }, { 'author_data.json' => all_authors_arr }]
+  files = [{ './Classes/Game/game_data.json' => all_games_arr },
+           { './Classes/Game/author_data.json' => all_authors_arr }]
 
   files.each do |file|
     file_path = file.keys.first

@@ -1,3 +1,8 @@
+require 'date'
+require_relative '../item'
+require_relative './game'
+require_relative './author'
+
 def gather_game_data
   puts 'Enter game title :'
   label = gets.chomp
