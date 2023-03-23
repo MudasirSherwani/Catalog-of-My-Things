@@ -1,14 +1,19 @@
+require_relative 'Classes/Music/music'
+
 class Main
   def director(user_answer)
+    music = Music.new
     case user_answer
     when 1
       # '1 List all books'
     when 2
       # '2 List all music albums'
+      music.list_music
     when 3
       # '3 List of games'
     when 4
       # '4 List all genres'
+      music.list_genre
     when 5
       # '5 List all labels'
     when 6
@@ -19,11 +24,13 @@ class Main
   end
 
   def director_add_items(user_answer)
+    music = Music.new
     case user_answer
     when 7
       # '7 Add a book'
     when 8
       # '8 Add a music album'
+      music.add_musicalbum
     when 9
       # '9 Add a game'
     when 10
