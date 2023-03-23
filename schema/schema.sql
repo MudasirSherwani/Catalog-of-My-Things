@@ -63,3 +63,14 @@ CREATE TABLE music_album(
       REFERENCES item (id)
       ON DELETE CASCADE
 );
+
+-- create indexes for foreign keys
+CREATE INDEX item_genre_id_idx ON item (genre_id);
+CREATE INDEX item_author_id_idx ON item (author_id);
+CREATE INDEX item_label_id_idx ON item (label_id);
+CREATE INDEX book_item_id_idx ON book (item_id);
+CREATE INDEX book_label_id_idx ON book (label_id);
+CREATE INDEX game_item_id_idx ON game (item_id);
+CREATE INDEX music_album_genre_id_idx ON music_album (genre_id);
+CREATE INDEX music_album_item_id_idx ON music_album (item_id);
+
