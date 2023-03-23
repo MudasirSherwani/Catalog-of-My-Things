@@ -5,7 +5,6 @@ require_relative './label'
 
 module BookLabel
   def fetch_books
-    # unless File.exist?('../../storage/books.json')
     File.open('./Classes/Book/books.json', 'w') unless File.exist?('./Classes/Book/books.json')
     book_data = File.read('./Classes/Book/books.json')
 
@@ -37,7 +36,6 @@ module BookLabel
     publish_date = gets.chomp
     book = Book.new(publisher, cover_state, publish_date)
 
-
     print 'Title of the lable: '
     title = gets.chomp.capitalize
     print 'Color: '
@@ -47,7 +45,6 @@ module BookLabel
     # label.add_item(book.to_json)
     book_item = book.to_json
     label.add_item(book_item)
-
 
     # add_label(book)
     store_book(book)
