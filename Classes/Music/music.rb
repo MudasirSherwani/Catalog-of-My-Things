@@ -2,6 +2,7 @@ require 'json'
 require 'pry'
 require_relative 'genre'
 require_relative 'music_album'
+require_relative '../Game/get_user_data.rb'
 
 class Music
   attr_accessor :list_genres, :list_albums
@@ -13,8 +14,9 @@ class Music
   end
 
   def add_musicalbum
-    puts 'Release Date [yyyy/MM/dd] :'
+    puts 'Release Date [yyyy-MM-dd] :'
     rel_date = gets.chomp
+    rel_date = check_date(rel_date)
     puts 'Can be archived? [Y/N]'
     archived = gets.chomp.upcase
     puts 'On spotify? [Y/N]'
