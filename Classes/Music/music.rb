@@ -2,7 +2,7 @@ require 'json'
 require 'pry'
 require_relative 'genre'
 require_relative 'music_album'
-require_relative '../Game/get_user_data.rb'
+require_relative '../Game/get_user_data'
 
 class Music
   attr_accessor :list_genres, :list_albums

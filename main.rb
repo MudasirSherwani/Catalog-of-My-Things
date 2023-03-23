@@ -1,4 +1,3 @@
-
 require_relative './Classes/Game/game_logic'
 require_relative './Classes/Game/path_finder'
 require_relative './Classes/Game/load_game_data'
@@ -7,20 +6,10 @@ require_relative './Classes/Game/get_user_data'
 require_relative 'Classes/Music/music'
 require_relative './Classes/Book/booklablemodule'
 
-require_relative './Classes/Game/game_logic'
-require_relative './Classes/Game/path_finder'
-require_relative './Classes/Game/load_game_data'
-require_relative './Classes/Game/get_user_data'
 
-require_relative 'Classes/Music/music'
 
 class Main
   include BookLabel
-  def initialize()
-    @all_games = []
-    @all_authors = []
-  end
-
   def initialize()
     @all_games = []
     @all_authors = []
