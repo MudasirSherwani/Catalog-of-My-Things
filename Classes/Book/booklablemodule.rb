@@ -4,25 +4,28 @@ require_relative './book'
 require_relative './label'
 
 module BookLabel
+  # book_path = './Classes/Book/books.json'
   def fetch_books
-    File.open('./Classes/Book/books.json', 'w') unless File.exist?('./Classes/Book/books.json')
-    book_data = File.read('./Classes/Book/books.json')
+    book_path = './Classes/Book/books.json'
+    File.open(book_path, 'w') unless File.exist?(book_path)
+    book_data = File.read(book_path)
 
     if book_data.empty?
       []
     else
-      File.open('./Classes/Book/books.json', 'r') { |line| JSON.parse(line.read) }
+      File.open(book_path, 'r') { |line| JSON.parse(line.read) }
     end
   end
 
   def fetch_labels
-    File.open('./Classes/Book/labels.json', 'w') unless File.exist?('./Classes/Book/labels.json')
-    lable_data = File.read('./Classes/Book/labels.json')
+    lable_path = './Classes/Book/labels.json'
+    File.open(lable_path, 'w') unless File.exist?(lable_path)
+    lable_data = File.read(lable_path)
 
     if lable_data.empty?
       []
     else
-      File.open('./Classes/Book/labels.json', 'r') { |line| JSON.parse(line.read) }
+      File.open(lable_path, 'r') { |line| JSON.parse(line.read) }
     end
   end
 
