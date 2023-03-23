@@ -2,11 +2,8 @@ require_relative './Classes/Game/game_logic'
 require_relative './Classes/Game/path_finder'
 require_relative './Classes/Game/load_game_data'
 require_relative './Classes/Game/get_user_data'
-
 require_relative 'Classes/Music/music'
 require_relative './Classes/Book/booklablemodule'
-
-
 
 class Main
   include BookLabel
@@ -73,7 +70,6 @@ class Main
       puts '8 Add a music album'
       puts '9 Add a game'
       puts '10 Exit'
-
       user_answer = gets.chomp.to_i
       director(user_answer)
     end
