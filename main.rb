@@ -1,3 +1,12 @@
+
+require_relative './Classes/Game/game_logic'
+require_relative './Classes/Game/path_finder'
+require_relative './Classes/Game/load_game_data'
+require_relative './Classes/Game/get_user_data'
+
+require_relative 'Classes/Music/music'
+require_relative './Classes/Book/booklablemodule'
+
 require_relative './Classes/Game/game_logic'
 require_relative './Classes/Game/path_finder'
 require_relative './Classes/Game/load_game_data'
@@ -6,6 +15,12 @@ require_relative './Classes/Game/get_user_data'
 require_relative 'Classes/Music/music'
 
 class Main
+  include BookLabel
+  def initialize()
+    @all_games = []
+    @all_authors = []
+  end
+
   def initialize()
     @all_games = []
     @all_authors = []
@@ -15,7 +30,7 @@ class Main
     music = Music.new
     case user_answer
     when 1
-      # '1 List all books'
+      list_all_books
     when 2
       # '2 List all music albums'
       music.list_music
@@ -25,7 +40,7 @@ class Main
       # '4 List all genres'
       music.list_genre
     when 5
-      # '5 List all labels'
+      list_all_labels
     when 6
       all_authors(@all_authors)
     else
@@ -37,7 +52,7 @@ class Main
     music = Music.new
     case user_answer
     when 7
-      # '7 Add a book'
+      add_book
     when 8
       # '8 Add a music album'
       music.add_musicalbum
