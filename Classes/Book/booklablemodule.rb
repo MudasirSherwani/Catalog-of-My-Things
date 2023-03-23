@@ -37,6 +37,8 @@ module BookLabel
     cover_state = gets.chomp
     print 'Publication date (yyyy-mm-dd): '
     publish_date = gets.chomp
+    
+    publish_date = check_date(publish_date)
     book = Book.new(publisher, cover_state, publish_date)
 
     print 'Title of the lable: '
